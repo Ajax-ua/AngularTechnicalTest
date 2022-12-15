@@ -1,7 +1,7 @@
-.title-text{
-  font-size: 20px;
-  line-height: 1.5;
-  color: #20364b;
-  font-weight: 600;
-  font-family: 'ProximaNova', sans-serif;
+.content{
+  padding: 10px;
+
+  @media all and (min-width: 768px) {
+    padding: 30px 20px;
+  }
 }

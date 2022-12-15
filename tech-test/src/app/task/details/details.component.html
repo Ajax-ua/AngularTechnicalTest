@@ -1,0 +1,17 @@
+<mat-card *ngIf="task$ | async as task" class="task">
+  <mat-card-header>
+    <mat-card-title>{{task.label}}</mat-card-title>
+    <mat-card-subtitle>
+      <ng-container *ngIf="task.done; else undone">Done on {{task.done}}</ng-container>
+      <ng-template #undone>Undone</ng-template>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{task.description}}</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="./edit">Edit</button>
+    <button mat-raised-button color="warn" (click)="remove(task.id)">Remove</button>
+  </mat-card-actions>
+</mat-card>

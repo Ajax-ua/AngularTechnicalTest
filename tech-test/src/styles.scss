@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+snack-bar-container.mat-snack-bar-container {
+  border-radius: 0;
+  margin: 30px;
+  padding: 7px 20px;
+  min-height: 40px;
+  min-width: 200px;
+  box-shadow: none;
+  letter-spacing: .05em;
+  line-height: 22px;
+
+  .mat-simple-snackbar {
+    line-height: inherit;
+  }
+
+  &.error-toast {
+    background: red;
+    color: #fff;
+  }
+}

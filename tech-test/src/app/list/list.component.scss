@@ -1,0 +1,21 @@
+:host {
+  .home {
+    width: 500px;
+
+    h1 {
+      margin: 20px 10px 20px;
+    }
+
+    .filter {
+      margin: 10px 10px 0;
+    }
+
+    .list {
+      width: 100%;
+
+      .label {
+        cursor: pointer;
+      }
+    }
+  }
+}

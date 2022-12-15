@@ -1,0 +1,22 @@
+<form fxLayout="column" fxLayoutGap="10px" class="form">
+  <mat-form-field class="full-width">
+    <mat-label>Label</mat-label>
+    <input matInput placeholder="Label" name="label" [(ngModel)]="task.label" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Description" name="description" [(ngModel)]="task.description"></textarea>
+  </mat-form-field>
+
+  <mat-slide-toggle color="primary" [checked]="task.done" name="done" (change)="onToggleChange($event)">Is done</mat-slide-toggle>
+
+  <div fxLayout="row" fxLayoutGap="10px" class="actions">
+    <div class="submit">
+      <button mat-raised-button color="primary" [disabled]="!task.label" type="button" (click)="save()">Save</button>
+    </div>
+    <div class="cancel">
+      <button mat-raised-button type="button" routerLink="/">Cancel</button>
+    </div>
+  </div>
+</form>

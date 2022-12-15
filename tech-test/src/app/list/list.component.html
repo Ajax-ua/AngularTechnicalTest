@@ -1,0 +1,33 @@
+<div class="home">
+  <div class="top" fxLayoutAlign="start center">
+    <h1 fxFlex>Task List</h1>
+
+    <div class="add">
+      <button mat-raised-button color="primary" routerLink="/add-task">Create New Task</button>
+    </div>
+  </div>
+
+  <div class="filter" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <span>Filter:</span>
+    <mat-chip-list>
+      <mat-chip (click)="filter(null)" [selected]="doneFilter === null">All</mat-chip>
+      <mat-chip (click)="filter(true)" [selected]="doneFilter === true">Done</mat-chip>
+      <mat-chip (click)="filter(false)" [selected]="doneFilter === false">Undone</mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <mat-list class="list" color="primary">
+    <mat-list-item
+      *ngFor="let task of filteredTasks$ | async; trackBy: trackByFn"
+      checkboxPosition="before"
+    >
+      <div fxFlex fxLayoutAlign="left center" fxLayoutGap="10px">
+        <mat-checkbox color="primary" [checked]="task.done" (change)="onChange($event, task)"></mat-checkbox>
+        <div matListItemTitle [routerLink]="['/task', task.id]" class="label">{{task.label}}</div>
+        <div fxFlex fxLayoutAlign="end">
+          <mat-icon matListItemIcon (click)="removeTask(task)" color="warn">delete</mat-icon>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

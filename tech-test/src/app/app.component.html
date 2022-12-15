@@ -1,2 +1,12 @@
-<h1 class="title-text">Welcome to Origin's Angular Technical Test: {{title}}</h1>
 
+<div class="header">
+  <mat-toolbar color="primary" fxLayou fxLayoutGap="10px" fxLayoutAlign="left center">
+    <button mat-icon-button routerLink="/">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>Welcome to Origin's Angular Technical Test: tech-test</span>
+  </mat-toolbar>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,9 @@
+:host ::ng-deep {
+  .task {
+    max-width: 500px;
+
+    .mat-card-header-text {
+      margin: 0;
+    }
+  }
+}
